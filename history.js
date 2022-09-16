@@ -6,7 +6,7 @@ function addHistory(questionText, timeTaken, errorCount) {
   
   <div class="col">
   <div class="card">
-  <h3>${questionText.slice(0, 30)}</h3>
+  <h3>${questionText.slice(0, 40)}...</h3>
   <div>
   <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
   <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
@@ -36,7 +36,7 @@ function displayHistory() {
     
     <div class="col">
     <div class="card">
-    <h3>${test.questionText.slice(0, 30)}...</h3>
+    <h3>${test.questionText.slice(0, 40)}...</h3>
     <p>You took: <span class="bold">${test.timeTaken}</span> seconds</p>
     <p>You made <span class="bold red">${test.errorCount}</span> mistakes</p> 
     </div>
