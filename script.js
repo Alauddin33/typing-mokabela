@@ -1,6 +1,7 @@
+
 const display = document.getElementById("display");
 const question = document.getElementById("question");
-const startBtn = document.getElementById("start");
+const startBtn = document.getElementById("starts");
 const countdownOverlay = document.getElementById("countdown");
 const resultModal = document.getElementById("result");
 const modalBackground = document.getElementById("modal-background");
@@ -17,10 +18,12 @@ fetch("./texts.json")
   .then((data) => {
     questionText = data[Math.floor(Math.random() * data.length)];
     question.innerHTML = questionText;
+    
   });
 
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
+  
   const newLetter = e.key;
 
   // Handle backspace press
@@ -105,19 +108,19 @@ const start = () => {
 
   let count = 3;
   countdownOverlay.style.display = "flex";
-
   const startCountdown = setInterval(() => {
-    countdownOverlay.innerHTML = '<h1>${count}</h1>';
+    countdownOverlay.innerHTML = `<h1>${count}</h1>`;
 
     // finished timer
     if (count == 0) {
       // -------------- START TYPING -----------------
+      countdownOverlay.style.display = "none";
       document.addEventListener("keydown", typeController);
-      countdownOverlay.style.display = "flex";
       display.classList.remove("inactive");
-
+            
       clearInterval(startCountdown);
       startTime = new Date().getTime();
+      
     }
     count--;
   }, 1000);
@@ -137,3 +140,5 @@ setInterval(() => {
 
   document.getElementById("show-time").innerHTML = `${startTime ? timeSpent : 0} seconds`;
 }, 1000);
+
+
