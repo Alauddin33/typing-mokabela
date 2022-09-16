@@ -88,7 +88,7 @@ const gameOver = () => {
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
-console.log(errorCount);
+
   addHistory(questionText, timeTaken, errorCount);
 
   // restart everything
@@ -109,8 +109,9 @@ const start = () => {
 
   let count = 3;
   countdownOverlay.style.display = "flex";
+  countdownOverlay.classList.add('red');
   const startCountdown = setInterval(() => {
-    countdownOverlay.innerHTML = `<h1>${count}</h1>`;
+    countdownOverlay.innerHTML = `<h1 class="display-2 fw-bold">${count}</h1>`;
 
     // finished timer
     if (count == 0) {
