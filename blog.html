@@ -43,7 +43,7 @@
             <h5 class="card-header fs-6"><span class="text-info bg-dark">Question:</span> How does work Event loop?</h5>
             <div class="card-body bg-warning p-2 text-dark bg-opacity-10">
               <h5 class="card-title text-primary fs-6">Answar:</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text"><span class="fw-bold">Event loop:</span> An event loop is something that pulls stuff out of the queue and places it onto the function execution stack whenever the function stack becomes empty. The event loop is the secret by which JavaScript gives us an illusion of being multithreaded even though it is single-threaded. The callback function in the event queue has not yet run and is waiting for its time into the stack when the SetTimeOut() is being executed and the Web API is making the mentioned wait. When the function stack becomes empty, the function gets loaded onto the stack. That is where the event loop works, it takes the first event from the Event Queue and places it onto the stack. This cycle is called the event loop and this how JavaScript manages its events.</p>
             </div>
         </div>
         <div class="card mb-5">
