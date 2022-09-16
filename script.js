@@ -23,15 +23,15 @@ fetch("./texts.json")
 
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
-  
   const newLetter = e.key;
-
+  
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
-    return display.removeChild(display.lastChild);
+    errorCount= errorCount+1;
+    display.removeChild(display.lastChild);
   }
-
+  
   // these are the valid character we are allowing to type
   const validLetters =
     "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ 1234567890!@#$%^&*()_+-={}[]'\".,?";
@@ -87,7 +87,7 @@ const gameOver = () => {
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
-
+console.log(errorCount);
   addHistory(questionText, timeTaken, errorCount);
 
   // restart everything
