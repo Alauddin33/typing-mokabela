@@ -28,8 +28,7 @@ const typeController = (e) => {
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
-    errorCount= errorCount+1;
-    display.removeChild(display.lastChild);
+      display.removeChild(display.lastChild);
   }
   
   // these are the valid character we are allowing to type
@@ -41,13 +40,15 @@ const typeController = (e) => {
     return;
   }
 
-  userText += newLetter;
+userText += newLetter;
+
 
   const newLetterCorrect = validate(newLetter);
 
   if (newLetterCorrect) {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
+    errorCount= errorCount+1;
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
   }
 
